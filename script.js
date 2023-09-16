@@ -56,7 +56,7 @@ rangeInput.oninput = function() {
 
   createDiv(side, newContainer);
   addEventListeners(smallDivs, resetColorsBtn);
-  rangeValue.textContent = `Divs per side: ${this.value}`;
+  rangeValue.textContent = `Squares per side: ${this.value}`;
 }
 
 /*

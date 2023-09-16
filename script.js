@@ -33,5 +33,4 @@ const smallDivs = document.querySelectorAll('.smallDiv');
 
 smallDivs.forEach(div => div.addEventListener('mouseenter', () => {
   div.style.backgroundColor = `rgb(${randomColorRGB()}, ${randomColorRGB()}, ${randomColorRGB()})`;
-  console.log(div.style.backgroundColor);
 }))

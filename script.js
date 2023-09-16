@@ -1,9 +1,8 @@
 'use strict';
 
 const container = document.querySelector('#container');
-const containerDim = 750;
+const containerDimensions = 750;
 const side = 16;
-const smallDivModifier = 0.8;
 let count = 0;
 
 function randomColorRGB() {
@@ -16,8 +15,8 @@ function createDiv() {
 
   newDiv.setAttribute(
     'style', `
-    width: ${containerDim/side + 'px'}; 
-    height: ${containerDim/side + 'px'};
+    width: ${containerDimensions / side + 'px'}; 
+    height: ${containerDimensions / side + 'px'};
     background-color: rgba(0,0,0, 0.5);
     `)
   count++;

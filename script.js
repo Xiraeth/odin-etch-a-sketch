@@ -18,8 +18,7 @@ function createDiv() {
     'style', `
     width: ${containerDim/side + 'px'}; 
     height: ${containerDim/side + 'px'};
-    background-color: rgb(0,0,0, 0.5);
-    opacity: 1;
+    background-color: rgba(0,0,0, 0.5);
     `)
   count++;
   container.appendChild(newDiv);

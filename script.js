@@ -4,6 +4,11 @@ const container = document.querySelector('.container');
 const resetColorsBtn = document.querySelector('.remove');
 const changeSizeBtn = document.querySelector('.prompt');
 const containerDimensions = 700;
+
+const rangeContainer = document.querySelector('.rangerContainer');
+const rangeValue = document.querySelector('.rangeValue');
+const rangeInput = document.querySelector('.rangeInput');
+
 let smallDivs;
 let side = 5;
 
@@ -40,6 +45,22 @@ function createDiv(divsPerSide, con) {
 
 createDiv(side, container);
 
+
+rangeInput.oninput = function() {
+  side = this.value;
+  document.querySelector('.container').remove();
+
+  const newContainer = document.createElement('div');
+  newContainer.classList.add('container');
+  document.body.insertAdjacentElement('afterbegin', newContainer);
+
+  createDiv(side, newContainer);
+  addEventListeners(smallDivs, resetColorsBtn);
+  rangeValue.textContent = `Divs per side: ${this.value}`;
+}
+
+/*
+Depreceted button meant for changing divs per side
 changeSizeBtn.addEventListener('click', () => {
   do {
     side = Number(prompt(`How many squares per side do you want your box to have? (it has to be fewer than 100) `));
@@ -53,3 +74,4 @@ changeSizeBtn.addEventListener('click', () => {
   createDiv(side, newContainer);
   addEventListeners(smallDivs, resetColorsBtn);
 })
+*/

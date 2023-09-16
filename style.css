@@ -51,3 +51,26 @@ button:active {
   top: 20px;
   left: 20px;
 }
+
+.rangeContainer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: lavender;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.rangeInput {
+  appearance: none;
+  border-radius: 20px;
+  background-color: mistyrose;
+}
+
+.rangeInput:hover {
+  background-color: rgb(217, 191, 188);
+}
+
+.rangeValue {
+  text-align: center;
+}

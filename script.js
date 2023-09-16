@@ -1,39 +1,55 @@
 'use strict';
 
-const container = document.querySelector('#container');
-const resetColors = document.querySelector('.remove');
+const container = document.querySelector('.container');
+const resetColorsBtn = document.querySelector('.remove');
+const changeSizeBtn = document.querySelector('.prompt');
 const containerDimensions = 750;
-const side = 16;
-let count = 0;
+let smallDivs;
+let side = 5;
 
 function randomColorRGB() {
   return Math.floor(Math.random() * 255);
 }
 
-function createDiv() {
-  let newDiv = document.createElement('div');
-  newDiv.classList.add(`smallDiv`);
-
-  newDiv.setAttribute(
-    'style', `
-    width: ${containerDimensions / side + 'px'}; 
-    height: ${containerDimensions / side + 'px'};
-    background-color: rgba(0,0,0, 0.5);
-    `)
-  count++;
-  container.appendChild(newDiv);
+function addEventListeners(divs, btn) {
+  divs.forEach(div => div.addEventListener('mouseenter', () => {
+    div.style.backgroundColor = `rgb(${randomColorRGB()}, ${randomColorRGB()}, ${randomColorRGB()})`;
+  }))
+  
+  btn.addEventListener('click', e => {
+    divs.forEach(div => div.style.backgroundColor = 'rgba(0,0,0, 0.5)');
+  })
 }
 
-for(let i = 0; i < side ** 2; i++) {
-  createDiv();
+function createDiv(divsPerSide, con) {
+  for(let i = 0; i < divsPerSide ** 2; i++) {
+    let newDiv = document.createElement('div');
+    newDiv.classList.add(`smallDiv`);
+
+    newDiv.setAttribute(
+      'style', `
+      width: ${containerDimensions / divsPerSide + 'px'}; 
+      height: ${containerDimensions / divsPerSide + 'px'};
+      background-color: rgba(0,0,0, 0.5);
+      `)
+    con.appendChild(newDiv);
+  }
+  smallDivs = document.querySelectorAll('.smallDiv');
+  addEventListeners(smallDivs, resetColorsBtn);
 }
 
-const smallDivs = document.querySelectorAll('.smallDiv');
+createDiv(side, container);
 
-smallDivs.forEach(div => div.addEventListener('mouseenter', () => {
-  div.style.backgroundColor = `rgb(${randomColorRGB()}, ${randomColorRGB()}, ${randomColorRGB()})`;
-}))
+changeSizeBtn.addEventListener('click', () => {
+  do {
+    side = Number(prompt(`How many squares per side do you want your box to have? (it has to be fewer than 100) `));
+  } while(side > 100 || side <= 0 || Number(side) !== side);
+  container.remove();
 
-resetColors.addEventListener('click', e => {
-  smallDivs.forEach(div => div.style.backgroundColor = 'rgba(0,0,0, 0.5)');
+  const newContainer = document.createElement('div');
+  newContainer.classList.add('container');
+  document.body.insertAdjacentElement('afterbegin', newContainer);
+
+  createDiv(side, newContainer);
+  addEventListeners(smallDivs, resetColorsBtn);
 })

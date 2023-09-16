@@ -4,11 +4,11 @@
 
 body {
   min-height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: midnightblue;
 }
 
-#container {
+.container {
   padding: 20px;
   border: 5px solid lavender;
   width: var(--containerDim);
@@ -19,25 +19,35 @@ body {
   flex-wrap: wrap;
 }
 
-.remove {
+button {
   font-size: 1.1em;
-  position: absolute;
-  top: 20px;
-  right: 20px;
   color: mediumslateblue;
   background-color: lavender;
   padding: 20px;
   border: none;
+  outline: none;
   border-radius: 10px;
   cursor: pointer;
   transition: all .15s;
 }
 
-.remove:hover {
+button:hover {
   background-color: mediumslateblue;
   color: lavender;
 }
 
-.remove:active {
+button:active {
   background-color: rgb(105, 88, 201);
+}
+
+.remove {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.prompt {
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }

@@ -3,7 +3,7 @@
 const container = document.querySelector('.container');
 const resetColorsBtn = document.querySelector('.remove');
 const changeSizeBtn = document.querySelector('.prompt');
-const containerDimensions = 750;
+const containerDimensions = 700;
 let smallDivs;
 let side = 5;
 

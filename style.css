@@ -1,5 +1,5 @@
 :root {
-  --containerDim: 750px;
+  --containerDim: 700px;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   width: var(--containerDim);
   height: var(--containerDim);
   background-color: mediumslateblue;
-  margin: 50px auto;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
 }

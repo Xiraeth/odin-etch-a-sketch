@@ -1,6 +1,7 @@
 'use strict';
 
 const container = document.querySelector('#container');
+const resetColors = document.querySelector('.remove');
 const containerDimensions = 750;
 const side = 16;
 let count = 0;
@@ -32,3 +33,7 @@ const smallDivs = document.querySelectorAll('.smallDiv');
 smallDivs.forEach(div => div.addEventListener('mouseenter', () => {
   div.style.backgroundColor = `rgb(${randomColorRGB()}, ${randomColorRGB()}, ${randomColorRGB()})`;
 }))
+
+resetColors.addEventListener('click', e => {
+  smallDivs.forEach(div => div.style.backgroundColor = 'rgba(0,0,0, 0.5)');
+})

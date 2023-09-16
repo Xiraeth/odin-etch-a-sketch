@@ -19,3 +19,25 @@ body {
   flex-wrap: wrap;
 }
 
+.remove {
+  font-size: 1.1em;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: mediumslateblue;
+  background-color: lavender;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.remove:hover {
+  background-color: mediumslateblue;
+  color: lavender;
+}
+
+.remove:active {
+  background-color: rgb(105, 88, 201);
+}

@@ -2,19 +2,20 @@
   --containerDim: 750px;
 }
 
-*{
-  box-sizing: border-box;
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: midnightblue;
 }
 
 #container {
+  padding: 20px;
+  border: 5px solid lavender;
   width: var(--containerDim);
   height: var(--containerDim);
   background-color: mediumslateblue;
-  margin: auto;
+  margin: 50px auto;
   display: flex;
   flex-wrap: wrap;
 }
 
-.newDiv {
-  /* width:  */
-}

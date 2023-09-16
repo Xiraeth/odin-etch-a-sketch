@@ -2,7 +2,9 @@
 
 const container = document.querySelector('#container');
 const containerDim = 750;
-const sides = 16;
+const side = 16;
+const smallDivModifier = 0.8;
+let count = 0;
 
 function randomColorRGB() {
   return Math.floor(Math.random() * 255);
@@ -10,19 +12,26 @@ function randomColorRGB() {
 
 function createDiv() {
   let newDiv = document.createElement('div');
-  newDiv.style.width = containerDim + 'px';
-  newDiv.style.height = containerDim + 'px';
+  newDiv.classList.add(`smallDiv`);
+
   newDiv.setAttribute(
     'style', `
-    width: ${containerDim/sides + 'px'}; 
-    height: ${containerDim/sides + 'px'};
-    background-color: rgb(${randomColorRGB()}, ${randomColorRGB()}, ${randomColorRGB()});
-    opacity: 0.6;
+    width: ${containerDim/side + 'px'}; 
+    height: ${containerDim/side + 'px'};
+    background-color: rgb(0,0,0, 0.5);
+    opacity: 1;
     `)
+  count++;
   container.appendChild(newDiv);
-  console.log(newDiv);
 }
 
-for(let i = 0; i < sides ** 2; i++) {
+for(let i = 0; i < side ** 2; i++) {
   createDiv();
 }
+
+const smallDivs = document.querySelectorAll('.smallDiv');
+
+smallDivs.forEach(div => div.addEventListener('mouseenter', () => {
+  div.style.backgroundColor = `rgb(${randomColorRGB()}, ${randomColorRGB()}, ${randomColorRGB()})`;
+  console.log(div.style.backgroundColor);
+}))

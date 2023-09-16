@@ -44,7 +44,7 @@ changeSizeBtn.addEventListener('click', () => {
   do {
     side = Number(prompt(`How many squares per side do you want your box to have? (it has to be fewer than 100) `));
   } while(side > 100 || side <= 0 || Number(side) !== side);
-  container.remove();
+  document.querySelector('.container').remove();
 
   const newContainer = document.createElement('div');
   newContainer.classList.add('container');

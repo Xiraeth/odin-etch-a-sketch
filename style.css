@@ -1,0 +1,20 @@
+:root {
+  --containerDim: 750px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+#container {
+  width: var(--containerDim);
+  height: var(--containerDim);
+  background-color: mediumslateblue;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newDiv {
+  /* width:  */
+}

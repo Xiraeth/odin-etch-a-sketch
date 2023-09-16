@@ -64,11 +64,13 @@ button:active {
 .rangeInput {
   appearance: none;
   border-radius: 20px;
-  background-color: mistyrose;
+  background-color: lavender;
+  height: 10px;
+  outline: none;
 }
 
 .rangeInput:hover {
-  background-color: rgb(217, 191, 188);
+  background-color: rgb(205, 205, 224);
 }
 
 .rangeValue {

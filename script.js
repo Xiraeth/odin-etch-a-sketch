@@ -44,7 +44,7 @@ function createDiv(divsPerSide, con) {
 }
 
 createDiv(side, container);
-
+rangeValue.textContent = `Divs per side: ${rangeInput.value}`
 
 rangeInput.oninput = function() {
   side = this.value;

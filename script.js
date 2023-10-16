@@ -38,7 +38,10 @@ function swapMode(btn) {
   if (btn.classList.contains("input")) {
     mode = "color";
     color = btn.value;
+  } else if (btn.classList.contains("delete")) {
+    mode = "eraser";
   } else mode = btn.textContent.toLowerCase();
+  console.log(mode);
 }
 
 function changeRangeText() {
@@ -73,9 +76,12 @@ function draw(e) {
 
   if (mode == "random rgb") {
     square.style.backgroundColor = `rgb(${randomColorRGB()},${randomColorRGB()},${randomColorRGB()})`;
-  } else if (mode == "black") {
-    square.style.backgroundColor = `black`;
   } else if (mode == "color") square.style.backgroundColor = color;
+  else if (mode == "black") {
+    square.style.backgroundColor = `black`;
+  } else if (mode == "eraser") {
+    square.style.backgroundColor = "";
+  }
 }
 
 function pageLoad() {

@@ -2,36 +2,33 @@
   --containerDim: 700px;
 }
 
-body {
-  min-height: 100vh;
-  /* overflow: hidden; */
-  background-color: midnightblue;
+* {
+  user-select: none;
 }
 
-.container {
-  padding: 20px;
-  border: 5px solid lavender;
-  width: var(--containerDim);
-  height: var(--containerDim);
-  background-color: mediumslateblue;
+body {
+  width: 1500px;
   margin: auto;
+  min-height: 100vh;
+  background-color: peachpuff;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 button {
+  width: 200px;
   font-size: 1.1em;
-  color: mediumslateblue;
+  color: black;
   background-color: lavender;
   padding: 20px;
-  border: none;
   outline: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: all .15s;
+  transition: all 0.15s;
 }
 
-button:hover {
+button:hover:not(.no-active) {
   background-color: mediumslateblue;
   color: lavender;
 }
@@ -40,39 +37,73 @@ button:active {
   background-color: rgb(105, 88, 201);
 }
 
-.remove {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.prompt {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+.container {
+  padding: 0px;
+  /* height: 800px; */
+  width: var(--containerDim);
+  height: var(--containerDim);
+  background-color: rgb(247, 247, 247);
+  border: 10px solid black;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .rangeContainer {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  color: lavender;
+  height: 200px;
+  color: black;
   font-weight: bold;
   font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rangeContainer h1 {
+  font-size: 2rem;
+}
+
+.rangeContainer p {
+  font-size: 2rem;
+  /* color: crimson; */
 }
 
 .rangeInput {
   appearance: none;
   border-radius: 20px;
-  background-color: lavender;
+  background-color: rgb(135, 104, 207);
   height: 10px;
+  transform: scale(1.3);
   outline: none;
 }
 
 .rangeInput:hover {
-  background-color: rgb(205, 205, 224);
+  background-color: rgb(174, 136, 235);
 }
 
 .rangeValue {
   text-align: center;
+}
+
+.buttons {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buttons h1 {
+  border-bottom: 2px solid black;
+  font-size: 3rem;
+}
+
+.activeButton {
+  color: lavender;
+  background-color: mediumslateblue;
+}
+
+.square {
+  user-select: none;
 }

@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Etch-a-Sketch</title>
   </head>
   <body>
-    <div class="container"></div>
     <div class="rangeContainer">
-      <input class="rangeInput" type="range" min="1" max="20" value="5">
+      <h1>Squares per side</h1>
+      <input class="rangeInput" type="range" min="1" max="50" value="24" />
       <p class="rangeValue"></p>
     </div>
-    <button class="remove">Clear</button>
+    <div class="container"></div>
+    <div class="buttons">
+      <h1>Colour</h1>
+      <button class="rgb activeButton">Random RGB</button>
+      <button class="black">Black</button>
+      <button class="remove no-active">Clear</button>
+    </div>
     <!-- <button class="prompt">Change size</button> -->
   </body>
 </html>

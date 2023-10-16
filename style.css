@@ -28,7 +28,7 @@ button {
   transition: all 0.15s;
 }
 
-button:hover:not(.no-active) {
+button:hover {
   background-color: mediumslateblue;
   color: lavender;
 }
@@ -66,20 +66,19 @@ button:active {
 
 .rangeContainer p {
   font-size: 2rem;
-  /* color: crimson; */
 }
 
 .rangeInput {
   appearance: none;
   border-radius: 20px;
-  background-color: rgb(135, 104, 207);
+  background-color: rgb(117, 102, 102);
   height: 10px;
   transform: scale(1.3);
   outline: none;
 }
 
 .rangeInput:hover {
-  background-color: rgb(174, 136, 235);
+  background-color: rgb(148, 130, 130);
 }
 
 .rangeValue {
@@ -92,11 +91,29 @@ button:active {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  gap: 20px;
 }
 
 .buttons h1 {
   border-bottom: 2px solid black;
   font-size: 3rem;
+  margin: 0;
+}
+
+#colorPicker {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#colorPicker::-webkit-color-swatch {
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
 .activeButton {
@@ -106,4 +123,18 @@ button:active {
 
 .square {
   user-select: none;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: darkslategray;
+  font-size: 1.2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

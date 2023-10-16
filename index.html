@@ -16,10 +16,19 @@
     <div class="container"></div>
     <div class="buttons">
       <h1>Colour</h1>
-      <button class="rgb activeButton">Random RGB</button>
-      <button class="black">Black</button>
+      <form>
+        <input
+          class="colorOption input"
+          type="color"
+          id="colorPicker"
+          name="color_picker"
+        />
+      </form>
+      <button class="rgb activeButton colorOption">Random RGB</button>
+      <button class="black colorOption">Black</button>
       <button class="remove no-active">Clear</button>
     </div>
+    <div class="footer">The Odin Project 2023 &copy; Xiraeth</div>
     <!-- <button class="prompt">Change size</button> -->
   </body>
 </html>

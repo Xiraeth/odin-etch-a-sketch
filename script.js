@@ -3,7 +3,7 @@
 const container = document.querySelector(".container");
 const resetBtn = document.querySelector(".remove");
 const buttonsCategory = document.querySelector(".buttons");
-const buttons = document.querySelectorAll(".buttons button");
+const colorOptions = document.querySelectorAll(".colorOption");
 const containerDimensions = 700;
 
 const rangeContainer = document.querySelector(".rangerContainer");
@@ -15,6 +15,7 @@ document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
 let mode = "random rgb";
+let color = "";
 let smallDivs;
 let side = rangeInput.value;
 
@@ -27,18 +28,17 @@ function randomColorRGB() {
 function swapActiveButton(btn) {
   if (!btn) return;
 
-  buttons.forEach((button) => {
-    if (btn.classList.contains("remove")) return;
-    button.classList.remove("activeButton");
-  });
+  colorOptions.forEach((button) => button.classList.remove("activeButton"));
+  if (btn.classList.contains("input")) return;
   if (!btn.classList.contains("no-active")) btn.classList.add("activeButton");
 }
 
 function swapMode(btn) {
   if (!btn) return;
-
-  if (btn.classList.contains("no-active")) return;
-  mode = btn.textContent.toLowerCase();
+  if (btn.classList.contains("input")) {
+    mode = "color";
+    color = btn.value;
+  } else mode = btn.textContent.toLowerCase();
 }
 
 function changeRangeText() {
@@ -75,7 +75,7 @@ function draw(e) {
     square.style.backgroundColor = `rgb(${randomColorRGB()},${randomColorRGB()},${randomColorRGB()})`;
   } else if (mode == "black") {
     square.style.backgroundColor = `black`;
-  }
+  } else if (mode == "color") square.style.backgroundColor = color;
 }
 
 function pageLoad() {
@@ -92,8 +92,11 @@ rangeInput.addEventListener("input", () => {
   createGrid();
 });
 buttonsCategory.addEventListener("click", (e) => {
-  swapActiveButton(e.target.closest("button"));
-  swapMode(e.target.closest("button"));
+  swapActiveButton(e.target.closest(".colorOption"));
+  swapMode(e.target.closest(".colorOption"));
+});
+buttonsCategory.addEventListener("input", (e) => {
+  swapMode(e.target.closest(".colorOption"));
 });
 
 /*
